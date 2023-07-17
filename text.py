@@ -1,9 +1,16 @@
-X = int(input())
-N = int(input())
-a = list(map(int,input().split()))
-b=[]
+T = int(input())
+for tc in range(1, T + 1):
+    num = input()
+    arr = list(map(int, input().split()))
 
-for i in (1,N+1):
-    b.append().list(map(int,input().split()))
+    cnt = [0] * 101
 
-print(b)
+    for score in arr:
+        cnt[score] += 1
+
+    idx = 0
+    for i in range(1, 101):
+        if cnt[idx] <= cnt[i]:
+            idx = i
+
+    print('#{} {}'.format(tc, idx))
